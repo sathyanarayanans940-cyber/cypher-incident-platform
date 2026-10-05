@@ -1,0 +1,44 @@
+server:
+  port: 8080
+  tomcat:
+    threads:
+      max: 12
+      min-spare: 2
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: cypher-gateway
+  datasource:
+    hikari:
+      maximum-pool-size: 4
+      minimum-idle: 1
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/cypher}
+    username: ${SPRING_DATASOURCE_USERNAME:cypher}
+    password: ${SPRING_DATASOURCE_PASSWORD:cypher_dev_password}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+cypher:
+  jwt:
+    secret: ${CYPHER_JWT_SECRET:replace-this-with-a-long-random-secret-at-least-32-characters}
+    expiration-hours: 12
+  service-api-key: ${CYPHER_SERVICE_API_KEY:cypher-internal-dev-key}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true
