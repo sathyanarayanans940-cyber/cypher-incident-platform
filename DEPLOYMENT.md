@@ -5,10 +5,14 @@ This assumes Docker Engine and the Compose plugin are already installed on the E
 ## First deployment
 
 ```bash
-git clone <your-repository-url> cypher
+git clone https://github.com/sathyanarayanans940-cyber/cypher-incident-platform.git cypher
 cd cypher
 cp .env.example .env
-sed -i 's/replace-this-with-a-long-random-secret-at-least-32-characters/<generate-a-real-secret>/' .env
+```
+
+Set the secrets in `.env` to new random values before starting the services. Then run:
+
+```bash
 docker compose up -d --build
 docker compose ps
 ```

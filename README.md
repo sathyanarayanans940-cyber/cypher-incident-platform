@@ -2,7 +2,7 @@
 
 Semester 5 academic team project, currently in progress. Cypher connects an illustrated camera simulator, a CPU-only vision service, incident management, a relational database and a React operations dashboard.
 
-## Implemented in this snapshot
+## Features
 
 - React and TypeScript dashboard with camera controls, incident review, analyst notes, CSV export and printable reports.
 - Python and FastAPI service analyzing PNG frames using connected components, silhouette geometry and temporal motion history.
@@ -47,6 +47,8 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m unittest test_vision
 ```
 
-The vision checks cover nine simulated scenes, invalid input, repeat-request handling and safe-scene behavior. See `SIMULATION.md` for the current simulator design and `DEPLOYMENT.md` for development deployment details. Coursework hand-in files and private infrastructure credentials are omitted from this public snapshot.
+The vision checks cover nine simulated scenes, invalid input, repeat-request handling and safe-scene behavior. See [simulation](SIMULATION.md) for the simulator design and [deployment](DEPLOYMENT.md) for development setup.
 
-This is collaborative academic work. It does not claim sole authorship of every component.
+## Contributions
+
+Cypher is a team project. My work focuses on the React frontend and relational database design.
